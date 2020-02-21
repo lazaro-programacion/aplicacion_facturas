@@ -83,7 +83,27 @@
             color: #0000cc;
             cursor: pointer;
         }
+  
     </style> -->
+<style>
+    h1{
+        color: #0000cc;
+        text-decoration: underline;
+        width: 50%;
+         margin-left: 45%;
+         
+            
+    }
+    p{
+        width: 50%;
+         margin-left: 45%;
+    }
+    body{
+        background: rgb(24, 9, 9);
+            color: rgb(236, 38, 38);
+    }
+
+</style>
 </head>
 
 <body>
@@ -92,13 +112,14 @@
 
         <p th:text="${mensaje}"></p>
         <div>
-            <table id="list" class="ui celled table" style="width: 50%; margin-left: 25%;">
+            <table id="list" class="ui selectable inverted table" style="width: 50%; margin-left: 25%;">
                 <thead>
                     <tr>
                         <th>Id</th>
                         <th>Descripción</th>
                         <th>Fabricante</th>
                         <th>Precio</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -107,6 +128,9 @@
                         <td th:text="${producto.descripcion}"></td>
                         <td th:text="${producto.fabricante}"></td>
                         <td th:text="${producto.precio}"></td>
+                        <td>
+                        <a th:href="@{/delete/} + ${producto.id}" th:text="'Eliminar'" class="btn btn-outline-danger"></a>
+                    </td>
                     </tr>
                 </tbody>
             </table>

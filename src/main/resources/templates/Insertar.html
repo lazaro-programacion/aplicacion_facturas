@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
+  
     <title>Nuevo producto</title>
-    <style>
+   <!--  <style>
         div {
             width: 70%;
             background-color: #ffa;
@@ -33,29 +35,48 @@
       }
      
      
-    </style>
-   
+    </style> -->
+   <style>
+          body {
+        background-color: rgb(3, 30, 39);
+      }
+      li{
+        width: 50%;
+         margin-left: 25%;
+         text-align: right;
+      }
+      h1{
+        width: 50%;
+        margin-left: 43%;
+        color: rgb(116, 44, 252);
+      }
+      p{
+        width: 50%;
+        margin-left: 40%;
+        color: rgb(116, 44, 252); 
+      }
+   </style>
 </head>
 
 <body>
     <h1> Nuevo Cliente</h1>
     <p> Introduccir los datos del nuevo producto</p>
     <form action="/lista" method="POST">
-        <div>
-            <ul style="list-style: none;">
+        <div class="ui inverted segment" style="width: 50%; margin-left: 25%;">
+            <ul style="list-style: right ;">
                 <li>
-                    <label>descripcion: <input type="text" name="descripcion" /></label>
+                    <label>descripcion: <input type="text" name="descripcion"style="width: 50%; margin-left: 25%;" /></label>
                 </li>
                 <li>
-                    <label>fabricante: <input type="text" name="fabricante"></label>
+                    <label>fabricante: <input type="text" name="fabricante"style="width: 50%; margin-left: 25%;"></label>
                 </li>
                 <li>
-                    <label>precio: <input type="text" name="precio"></label>
+                    <label>precio: <input type="text" name="precio"style="width: 50%; margin-left: 25%;"></label>
                 </li>
 
 
             </ul>
-            <input type="submit">
+            <input type="submit" style="width: 50%; margin-left: 25%;">
         </div>
     </form>
 

@@ -28,7 +28,8 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @RestController
 
-@ResponseBody@RequestMapping("/api") //http://localhost:8080/api
+@ResponseBody
+@RequestMapping("/api") //http://localhost:8080/api
 
 public class FacturasController {
 
@@ -109,10 +110,10 @@ public class FacturasController {
     }
 
     @PutMapping("/{id}/")
-    public Producto modificarProducto(
-        @PathVariable("id") Long id, 
-        @RequestBody Producto producto){
+    public Producto modificarProducto(  @PathVariable("id") Long id,@RequestBody Producto producto){
+     
         Producto aModif = pr.findById(id).get();
+
         aModif.setDescripcion(producto.getDescripcion());
         aModif.setFabricante(producto.getFabricante());
         aModif.setPrecio(producto.getPrecio());
@@ -137,4 +138,6 @@ public class FacturasController {
         }
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+
 }

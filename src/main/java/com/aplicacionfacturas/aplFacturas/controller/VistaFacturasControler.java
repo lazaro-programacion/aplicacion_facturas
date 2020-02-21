@@ -4,8 +4,10 @@ import com.aplicacionfacturas.aplFacturas.model.Producto;
 import com.aplicacionfacturas.aplFacturas.model.ProductoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -80,6 +82,26 @@ public class VistaFacturasControler {
             }
         }
 
+    }
+
+
+    @GetMapping("/delete/{id}")//http://localhost:8080/api/{id}/
+    public ModelAndView deleteProducto(
+        @PathVariable("id") Long id
+        ) {
+       
+        try{
+            pr.deleteById(id);
+        }catch(EmptyResultDataAccessException e){
+            return null;
+        }
+
+        ModelAndView modelAndView=new ModelAndView("VistaProducto");
+        modelAndView.addObject("productos", pr.findAll());
+
+        Long total=pr.count();
+        modelAndView.addObject("mensaje", "Total artículos: "+String.valueOf(total));
+        return  modelAndView;
     }
 
 }
