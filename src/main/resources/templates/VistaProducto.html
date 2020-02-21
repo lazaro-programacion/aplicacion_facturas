@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
+ 
+   <!--  <link rel="stylesheet" type="text/css" href="/src/main/resources/templates/css/Tema.css" media="screen" /> -->
+    <title>Nuevo producto</title>
+<!--     <style>
+        div {
+            width: 400px;
+            text-align: right;
+            padding-bottom: 10px;
+
+        }
+
+        input {
+            width: 160px;
+
+        }
+
+
+
+        table {
+            padding: 5px;
+            font-size: 16px;
+            background-color: #83aec0;
+            background-image: url(fondo_th.png);
+            background-repeat: repeat-x;
+            color: #FFFFFF;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-right-color: #558FA6;
+            border-bottom-color: #558FA6;
+            font-family: “Trebuchet MS”, Arial;
+            text-transform: uppercase;
+        }
+
+        td,
+        h1,
+        p,
+        body,
+        th {
+            background: rgb(24, 9, 9);
+            color: rgb(236, 38, 38);
+        }
+
+        th {
+
+            border: 2px groove rgba(13, 44, 83, 0.87);
+            background-color: rgb(19, 1, 1);
+            color: white;
+            padding: 2px;
+            text-align: center;
+        }
+
+        td {
+            border-collapse: collapse;
+            text-align: center;
+            border: 1px groove rgb(14, 188, 211);
+        }
+
+        .enlace {
+            display: inline;
+            border: 1;
+            padding: 0;
+            margin: 0;
+            text-decoration: underline;
+            background: none;
+            color: #e2e2eb;
+            font-family: arial, sans-serif;
+            font-size: 1em;
+            line-height: 1em;
+        }
+
+        .enlace:hover {
+            text-decoration: none;
+            color: #0000cc;
+            cursor: pointer;
+        }
+    </style> -->
+</head>
+
+<body>
+    <h1> Producto</h1>
+    <p></p>
+
+        <p th:text="${mensaje}"></p>
+        <div>
+            <table id="list" class="ui celled table" style="width: 50%; margin-left: 25%;">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Descripción</th>
+                        <th>Fabricante</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="producto : ${productos}">
+                        <td th:text="${producto.id}"></td>
+                        <td th:text="${producto.descripcion}"></td>
+                        <td th:text="${producto.fabricante}"></td>
+                        <td th:text="${producto.precio}"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="enlace" role="link" onclick="window.location='/api/insertar'">Añadir
+                otro elemento</button>
+            <a class="enlace" href="/api/insertar"></a>
+        </div>
+
+
+</body>
+
+</html>

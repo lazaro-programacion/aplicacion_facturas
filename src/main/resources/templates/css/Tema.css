@@ -1,0 +1,51 @@
+.div {
+    width: 400px;
+    text-align: right;
+    padding-bottom: 10px;
+
+}
+
+.input {
+    width: 160px;
+
+}
+
+
+
+.table {
+    padding: 5px;
+    font-size: 16px;
+    background-color: #83aec0;
+    background-image: url(fondo_th.png);
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-right-color: #558FA6;
+    border-bottom-color: #558FA6;
+    font-family: “Trebuchet MS”, Arial;
+    text-transform: uppercase;
+}
+
+.td,h1,p,body,
+th {
+    background: rgb(24, 9, 9);
+    color: rgb(236, 38, 38);
+}
+
+.th {
+
+    border: 2px groove rgba(13, 44, 83, 0.87);
+    background-color: rgb(19, 1, 1);
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+.td {
+    border-collapse: collapse;
+    text-align: center;
+    border: 3px groove rgb(14, 188, 211);
+}

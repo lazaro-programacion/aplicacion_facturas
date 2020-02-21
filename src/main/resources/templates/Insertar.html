@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo producto</title>
     <style>
-        div{
-            width: max-content;
-            text-align: right;
-            }
-        input{width: 160px;}
-    </style>
-</head>
-<body>
-    <h1>Nuevo Cliente</h1>
-    <p>Introduccir los datos del nuevo producto</p>
-    <form action="/insertar" method="POST">
-        <div>
-        <ul style="list-style: none;">
-            <li>
-                <label>descripcion: <input type="text" name="descripcion"/></label> 
-            </li>
-            <li>
-                <label>fabricante: <input type="text" name="fabricante"></label>
-            </li>
-            <li>
-                <label>precio: <input type="text" name="precio"></label>
-            </li>
+        div {
+            width: 70%;
+            background-color: #ffa;
+             margin-left: auto;
+             margin-right: auto;
+            text-align: center;
+        }
 
-          
-        </ul>
-        <input type="submit">
-        </div>   
+        input {
+            width: 160px;
+        }
+        body {
+        background-color: lightblue;
+      }
+      
+      h1 {
+        color: white;
+        text-align: center;
+      }
+      
+      p {
+        font-family: verdana;
+        font-size: 20px;
+        text-align: center;
+      }
+     
+     
+    </style>
+   
+</head>
+
+<body>
+    <h1> Nuevo Cliente</h1>
+    <p> Introduccir los datos del nuevo producto</p>
+    <form action="/lista" method="POST">
+        <div>
+            <ul style="list-style: none;">
+                <li>
+                    <label>descripcion: <input type="text" name="descripcion" /></label>
+                </li>
+                <li>
+                    <label>fabricante: <input type="text" name="fabricante"></label>
+                </li>
+                <li>
+                    <label>precio: <input type="text" name="precio"></label>
+                </li>
+
+
+            </ul>
+            <input type="submit">
+        </div>
     </form>
-    
+
 </body>
+
 </html>
