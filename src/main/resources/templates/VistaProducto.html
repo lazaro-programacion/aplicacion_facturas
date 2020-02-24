@@ -107,7 +107,15 @@
 </head>
 
 <body>
-    <h1> Producto</h1>
+    <h1> Producto
+        <div class="ui huge breadcrumb" style="width: 50%; margin-left: -100%;">
+            <a class="enlace"role="link" onclick="window.location='/api/insertar'"> Ingresad Producto</a>
+            <i class="right chevron icon divider"></i>
+            <a class="enlace"role="link" onclick="window.location='/lista'"> Listado </a>
+            <i class="right chevron icon divider"></i>
+            <div class="active section"></div>
+          </div>
+    </h1>
     <p></p>
 
         <p th:text="${mensaje}"></p>
@@ -139,7 +147,7 @@
             <a class="enlace" href="/api/insertar"></a>
         </div>
 
-
+      
 </body>
 
 </html>
