@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
+  
+    <title>Nuevo producto</title>
+  
+   <style>
+          body {
+        background-color: rgb(3, 30, 39);
+      }
+      li{
+        width: 50%;
+         margin-left: 23%;
+         text-align: right;
+      }
+      h1{
+        width: 50%;
+        margin-left: 43%;
+        color: rgb(116, 44, 252);
+      }
+      p{
+        width: 50%;
+        margin-left: 41%;
+        color: rgb(116, 44, 252); 
+      }
+   </style>
+</head>
+
+<body>
+    <h1>Registro </h1>
+    <p> Introduccir los datos </p>
+    <form action="/usuario" method="GET">
+        <div class="ui inverted segment" style="width: 50%; margin-left: 25%;">
+            <ul style="list-style: right ;">
+                <li>
+                    <label>usuario: <input type="text" name="usuario"style="width: 50%; margin-left: 25%;" /></label>
+                </li>
+                <li>
+                    <label>password: <input type="text" name="password"style="width: 50%; margin-left: 25%;"></label>
+                </li>
+                <li>
+                    <label>email: <input type="text" name="email"style="width: 50%; margin-left: 25%;"></label>
+                </li>
+                <li>
+                    <label>telefono: <input type="text" name="telefono"style="width: 50%; margin-left: 25%;"></label>
+                </li>
+
+
+            </ul>
+            <input type="submit" style="width: 50%; margin-left: 25%;">
+        </div>
+      
+    </form>
+
+</body>
+
+</html>

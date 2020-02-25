@@ -22,6 +22,15 @@ public class VistaFacturasControler {
     @Autowired
     private ProductoRepository pr;
 
+    @GetMapping("/usuario") // http://localhost:8080/producto
+    public ModelAndView UsuarioHTML() {
+        ModelAndView modelAndView = new ModelAndView("Usuario");
+        modelAndView.addObject("mensaje", "");
+
+        return modelAndView;
+    }
+
+
     @GetMapping("/producto") // http://localhost:8080/producto
     public ModelAndView InsertarHTML() {
         ModelAndView modelAndView = new ModelAndView("Insertar");

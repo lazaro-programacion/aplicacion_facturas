@@ -4,6 +4,8 @@ import java.util.NoSuchElementException;
 
 import com.aplicacionfacturas.aplFacturas.model.Producto;
 import com.aplicacionfacturas.aplFacturas.model.ProductoRepository;
+import com.aplicacionfacturas.aplFacturas.model.Usuario;
+import com.aplicacionfacturas.aplFacturas.model.UsuarioRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -35,6 +37,8 @@ public class FacturasController {
 
     @Autowired
     private ProductoRepository pr;
+
+    private UsuarioRepository ur;
 
     @GetMapping("/")
     public Iterable<Producto> getAllProductos() {
@@ -139,5 +143,27 @@ public class FacturasController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+
+    @GetMapping("/creausuario")
+    public ModelAndView creausuarioHTML() {
+        ModelAndView modelAndView = new ModelAndView("CreaUsuario");
+        modelAndView.addObject("mensaje", "Añadido correctamente");
+
+        return modelAndView;
+    }
+
+
+    @PostMapping("/creausuario")
+
+    public ModelAndView creausuarioHTMLPost(@RequestParam("usuario") String usuario,
+            @RequestParam("password") String password,@RequestParam("email") String email,
+             @RequestParam("telefono") Integer telefono) {
+
+        ModelAndView modelAndView = new ModelAndView("CreaUsuario");
+
+        Usuario user = new Usuario(usuario, password, email,telefono);
+        ur.save(user);
+        return modelAndView;
+    }
 
 }
